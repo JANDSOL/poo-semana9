@@ -1,0 +1,17 @@
+# Visual Studio
+.vscode/
+
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Documents
+documents/
+
+# Validation folder (Future implementation)
+data_validation/
+
+# Clear Screen, Operative System (Do not implement)
+operative_system/
