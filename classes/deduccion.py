@@ -12,3 +12,11 @@ class Deduccion:
         else:
             calcular_com = 0
         return calcular_com
+
+    @property
+    def iess(self):
+        return self.__iess
+
+    @iess.setter
+    def iess(self, ies=0.0945):
+        self.__iess = ies
