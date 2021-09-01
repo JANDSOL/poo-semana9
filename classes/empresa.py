@@ -14,3 +14,14 @@ class Empresa:
         self.empleado = Empleado(emEmpl_nom, sue, fec_ing)
         self.__departamento = Departamento(des, emp)
         self.__auto_incrementoId += 1
+
+    def mostrar_empresa(self) -> None:
+        print('-Clase Empresa:')
+        print(' id:', self.__id)
+        print(' nombre:', self.nombre)
+        print(' ruc:', self.ruc)
+        print(' telefono:', self.telefono)
+        print(' direccion:', self.direccion)
+        print(' razon_social:', self.razon_social)
+        print(' Empleado():', self.empleado)
+        print(' Departamento():', self.__departamento)
