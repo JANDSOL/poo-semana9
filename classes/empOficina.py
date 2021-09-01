@@ -8,3 +8,8 @@ class EmpOficina(Empleado):
         self.__id = self.__auto_incrementoId
         self.comision = com
         self.__auto_incrementoId += 1
+    
+    def mostrar_emp_oficina(self) -> None:
+        print('-Clase Empleado Oficina:')
+        print(' id:', self.__id)
+        print(' comision:', self.comision)

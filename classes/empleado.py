@@ -6,3 +6,14 @@ class Empleado:
         self.sueldo = sue
         self.fecha_ingreso = fec_ing
         self.__auto_incrementoId += 1
+
+    def __str__(self) -> str:
+        empleado_cadena = '(' + self.__id + ', ' + self.nombre + ', ' + str(self.sueldo) + ', ' + self.fecha_ingreso + ')'
+        return empleado_cadena
+
+    def mostrar_empleado(self) -> None:
+        print('-Clase Empleado:')
+        print(' id:', self.__id)
+        print(' nombre:', self.nom)
+        print(' sueldo:', self.sueldo)
+        print(' fecha_ingreso:', self.fecha_ingreso)

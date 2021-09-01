@@ -9,3 +9,9 @@ class EmpObrero(Empleado):
         self.sindicato = sin
         self.contrato_colectivo = con_col
         self.__auto_incrementoId += 1
+    
+    def mostrar_emp_obrero(self) -> None:
+        print('-Clase Empleado Obrero:')
+        print(' id:', self.__id)
+        print(' sindicato:', self.sindicato)
+        print(' contrato_colectivo:', self.contrato_colectivo)
