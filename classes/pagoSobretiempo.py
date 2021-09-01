@@ -21,7 +21,7 @@ class PagoSobretiempo:
             estado = False
         return estado
 
-    def mostrar_empleado(self) -> None:
+    def mostrar_pago_sobretiempo(self) -> None:
         print('-Clase pagoSobretiempo:')
         print(' id:', self.__id)
         print(' fecha:', self.fecha)

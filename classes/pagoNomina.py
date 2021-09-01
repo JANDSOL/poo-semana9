@@ -26,3 +26,18 @@ class PagoNomina:
     
     def __calculo_liquido(self, total_ingreso, total_descuento) -> float:
         return round((total_ingreso - total_descuento), 2)
+
+    def mostrar_pago_nomina(self) -> None:
+        print('-Clase pagoNomina:')
+        print(' id:', self.__id)
+        print(' fecha:', self.fecha)
+        print(' sueldo:', self.sueldo)
+        print(' comision:', self.comision)
+        print(' iess:', self.iess)
+        print(' antiguedad:', self.antiguedad)
+        print(' prestamo:', self.prestamo)
+        print(' total_ingreso:', self.__total_ingreso)
+        print(' total_descuento:', self.__total_descuento)
+        print(' liquido_recibir:', self.__liquido_recibir)
+        print(' empleado:', self.empleado)
+        print(' sobretiempo:', self.sobretiempo)
