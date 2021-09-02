@@ -31,7 +31,7 @@ class PagoNomina:
         print('-Clase pagoNomina:')
         print(' id:', self.__id)
         print(' fecha:', self.fecha)
-        print(' sueldo:', self.sueldo)
+        print(' sueldo:', self.__sueldo)
         print(' comision:', self.comision)
         print(' iess:', self.iess)
         print(' antiguedad:', self.antiguedad)

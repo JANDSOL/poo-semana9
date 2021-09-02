@@ -14,6 +14,6 @@ class Empleado:
     def mostrar_empleado(self) -> None:
         print('-Clase Empleado:')
         print(' id:', self.__id)
-        print(' nombre:', self.nom)
+        print(' nombre:', self.nombre)
         print(' sueldo:', self.sueldo)
         print(' fecha_ingreso:', self.fecha_ingreso)
