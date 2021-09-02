@@ -25,9 +25,9 @@ class Prestamo:
 
     def __calcular_saldo(self, valor, numero_pagos, cuota) -> float:
         if numero_pagos != 0:
-            saldo = round(((numero_pagos * cuota) - valor), 2)
+            saldo = round(((numero_pagos * cuota)-cuota), 2)
         else:
-            saldo = round((cuota - valor), 2)
+            return 0
         return saldo
 
     def __calcular_estado(self, saldo) -> bool:
