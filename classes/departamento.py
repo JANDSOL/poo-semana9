@@ -1,10 +1,10 @@
 class Departamento:
     __auto_incrementoId = 0
     def __init__(self, des='', emp='') -> None:
-        self.__id = self.__auto_incrementoId
+        self.__id = Departamento.__auto_incrementoId
         self.descripcion = des
         self.empleado = emp
-        self.__auto_incrementoId += 1
+        Departamento.__auto_incrementoId += 1
 
     def __str__(self) -> str:
         departamento_cadena = '(' + str(self.__id) + ', ' + self.descripcion + ')'
