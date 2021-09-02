@@ -10,7 +10,7 @@ class PagoSobretiempo:
         self.__auto_incrementoId += 1
 
     def __str__(self) -> str:
-        pagoSobretiempo_cadena = '(' + self.__id + ', ' + self.fecha + ', ' + str(self.horas_recargo) + ', '\
+        pagoSobretiempo_cadena = '(' + str(self.__id) + ', ' + self.fecha + ', ' + str(self.horas_recargo) + ', '\
                               + str(self.horas_extraordinarias) + ', ' + str(self.__estado) + ')'
         return pagoSobretiempo_cadena
 

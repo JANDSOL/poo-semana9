@@ -7,7 +7,7 @@ class Departamento:
         self.__auto_incrementoId += 1
 
     def __str__(self) -> str:
-        departamento_cadena = '(' + self.__id + ', ' + self.descripcion + ')'
+        departamento_cadena = '(' + str(self.__id) + ', ' + self.descripcion + ')'
         return departamento_cadena
 
     def mostrar_departamento(self) -> None:
