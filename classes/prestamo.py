@@ -16,6 +16,10 @@ class Prestamo:
                               + ', ' + str(self.__cuota) + ', ' + str(self.__saldo) + ', ' + str(self.__estado) + ')'
         return prestamo_cadena
     
+    @property
+    def cuota(self) -> float:
+        return self.__cuota
+    
     def __calcular_cuota(self, valor, numero_pagos) -> float:
         return round((valor/numero_pagos), 2)
 
