@@ -10,7 +10,7 @@ class PagoSobretiempo:
         PagoSobretiempo.__auto_incrementoId += 1
 
     def __str__(self) -> str:
-        pagoSobretiempo_cadena = '(' + str(self.__id) + ', ' + self.fecha + ', ' + str(self.horas_recargo) + ', '\
+        pagoSobretiempo_cadena = '(' + str(self.__id) + ', ' + str(self.fecha) + ', ' + str(self.horas_recargo) + ', '\
                               + str(self.horas_extraordinarias) + ', ' + str(self.__estado) + ')'
         return pagoSobretiempo_cadena
 
@@ -20,6 +20,10 @@ class PagoSobretiempo:
         else:
             estado = False
         return estado
+    
+    def calcular_sobretiempo(self, sueldo) -> float:
+        valor_hora = sueldo / 240
+        return round((valor_hora * (self.horas_recargo * 0.5 + self.horas_extraordinarias * 2)), 2)
 
     def mostrar_pago_sobretiempo(self) -> None:
         print('-Clase pagoSobretiempo:')

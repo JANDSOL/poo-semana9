@@ -12,7 +12,7 @@ class Prestamo:
         Prestamo.__auto_incrementoId += 1
 
     def __str__(self) -> str:
-        prestamo_cadena = '(' + str(self.__id) + ', ' + self.fecha + ', ' + str(self.valor) + ', ' + str(self.numero_pagos)\
+        prestamo_cadena = '(' + str(self.__id) + ', ' + str(self.fecha) + ', ' + str(self.valor) + ', ' + str(self.numero_pagos)\
                               + ', ' + str(self.__cuota) + ', ' + str(self.__saldo) + ', ' + str(self.__estado) + ')'
         return prestamo_cadena
 

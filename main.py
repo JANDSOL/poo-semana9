@@ -10,12 +10,12 @@ from classes.pagoNomina import PagoNomina
 
 
 #TODO: IMPLEMENTAR INGRESO DE DATOS PARA TODAS LAS CLASES.
-empl = EmpOficina('Lucas Freidman', 900.40, fecha(2020, 10, 1).strftime('%d/%m/%Y'), True)
-# empl = EmpObrero('Lucas Freidman', 900.40, fecha(2020, 10, 1).strftime('%d/%m/%Y'), True, True)
+empl = EmpOficina('Lucas Freidman', 900.40, fecha(2020, 10, 1), True)
+# empl = EmpObrero('Lucas Freidman', 900.40, fecha(2020, 10, 1), True, True)
 empr = Empresa('Lukas y As.', '0247389763524', '042721089', 'Milagro, vía Kilometro 26.',
                'Mejorar la calidad de vida en el cantón.', empl, 'Recursos Humanos.')
-pago_sobr = PagoSobretiempo(fecha(2020, 10, 1).strftime('%d/%m/%Y'), 10.37, 20.63, empl)
-pres = Prestamo(fecha(2020, 10, 15).strftime('%d/%m/%Y'), 300.10, 6, empl)
+pago_sobr = PagoSobretiempo(fecha(2020, 10, 1), 4, 2, empl)
+pres = Prestamo(fecha(2020, 10, 15), 300.10, 6, empl)
 # pres = Prestamo(emp=empl)
 if isinstance(empl, EmpOficina):
     adic = Adicion(com=empl.comision)
@@ -23,7 +23,7 @@ else:  # Obrero solo tiene adicion de antiguedad
     adic = Adicion(ant=30.89)
 dedu = Deduccion()
 dedu.iess = 9.45
-pago_nomi = PagoNomina(fecha(2020, 10, 31).strftime('%d/%m/%Y'), adic.comision, dedu.iess, adic.antiguedad, pres, empl, pago_sobr)
+pago_nomi = PagoNomina(fecha(2020, 10, 31), adic.comision, dedu.iess, adic.antiguedad, pres, empl, pago_sobr)
 
 print('')
 empr.mostrar_empresa()

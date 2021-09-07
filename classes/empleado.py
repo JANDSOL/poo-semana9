@@ -8,7 +8,7 @@ class Empleado:
         Empleado.__auto_incrementoId += 1
 
     def __str__(self) -> str:
-        empleado_cadena = '(' + str(self.__id) + ', ' + self.nombre + ', ' + str(self.sueldo) + ', ' + self.fecha_ingreso + ')'
+        empleado_cadena = '(' + str(self.__id) + ', ' + self.nombre + ', ' + str(self.sueldo) + ', ' + str(self.fecha_ingreso) + ')'
         return empleado_cadena
 
     def mostrar_empleado(self) -> None:
