@@ -1,6 +1,6 @@
 class Empleado:
     __auto_incrementoId = 0
-    def __init__(self, nom='', sue=0, fec_ing='00/00/0000') -> None:
+    def __init__(self, nom='', sue=0, fec_ing=0) -> None:
         self.__id = Empleado.__auto_incrementoId
         self.nombre = nom
         self.sueldo = sue

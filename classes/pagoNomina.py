@@ -1,6 +1,6 @@
 class PagoNomina:
     __auto_incrementoId = 0
-    def __init__(self, fec='', com=0, ies=0, ant=0, pre='', emp='', sobTie='') -> None:
+    def __init__(self, fec=0, com=0, ies=0, ant=0, pre='', emp='', sobTie='') -> None:
         self.__id = PagoNomina.__auto_incrementoId
         self.fecha = fec
         self.comision = com
@@ -9,8 +9,8 @@ class PagoNomina:
         self.empleado = emp
         self.__sueldo = self.empleado.sueldo
         self.iess = self.__calculo_iess(ies, self.__sueldo)
-        self.__total_ingreso = self.__total_ingreso(self.__sueldo, self.antiguedad)
-        self.__total_descuento = self.__total_descuento(self.comision, self.iess, self.prestamo.cuota)
+        self.__total_ingreso = self.__total_ingreso(self.__sueldo, self.comision, self.antiguedad)
+        self.__total_descuento = self.__total_descuento(self.iess, self.prestamo.cuota)
         self.__liquido_recibir = self.__calculo_liquido(self.__total_ingreso, self.__total_descuento)
         self.sobretiempo = sobTie
         PagoNomina.__auto_incrementoId += 1
@@ -18,11 +18,11 @@ class PagoNomina:
     def __calculo_iess(self, iess, sueldo) -> float:
         return round((iess * sueldo), 2)
     
-    def __total_ingreso(self, sueldo, antiguedad) -> float:
-        return round((sueldo + antiguedad), 2)
+    def __total_ingreso(self, sueldo, comision, antiguedad) -> float:
+        return round((sueldo + comision + antiguedad), 2)
 
-    def __total_descuento(self, comision, iess, cuota) -> float:
-        return round((comision + iess + cuota), 2)
+    def __total_descuento(self, iess, cuota) -> float:
+        return round((iess + cuota), 2)
     
     def __calculo_liquido(self, total_ingreso, total_descuento) -> float:
         return round((total_ingreso - total_descuento), 2)
