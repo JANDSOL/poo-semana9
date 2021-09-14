@@ -5,15 +5,15 @@ class PagoNomina:
         self.fecha = fec
         self.prestamo = pre
         self.empleado = emp
+        self.sobretiempo = sobTie
         self.__sueldo = self.empleado.sueldo
         self.antiguedad = self.__calculo_antiguedad(ant, self.fecha, self.empleado.fecha_ingreso, self.__sueldo)
         self.comision = self.__calculo_comision(com, self.__sueldo)
         self.iess = self.__calculo_iess(ies, self.__sueldo)
-        self.sobretiempo = sobTie
         self.calcular_sobretiempo = self.sobretiempo.calcular_sobretiempo(self.__sueldo)
-        self.cuotaPrestamo = self.prestamo.cuota
+        self.cuota_prestamo = self.prestamo.cuota
         self.__total_ingreso = self.__total_ingreso(self.__sueldo, self.calcular_sobretiempo, self.comision, self.antiguedad)
-        self.__total_descuento = self.__total_descuento(self.iess, self.prestamo.cuota)
+        self.__total_descuento = self.__total_descuento(self.iess, self.cuota_prestamo)
         self.__liquido_recibir = self.__calculo_liquido(self.__total_ingreso, self.__total_descuento)
         PagoNomina.__auto_incrementoId += 1
 
@@ -22,7 +22,7 @@ class PagoNomina:
         return round((ant * fechas / 365 * sue), 2)
 
     def __calculo_comision(self, comision, sueldo) -> float:
-        return round((comision * sueldo))
+        return round((comision * sueldo), 2)
 
     def __calculo_iess(self, iess, sueldo) -> float:
         return round((iess * sueldo), 2)
@@ -40,15 +40,15 @@ class PagoNomina:
         print('-Clase pagoNomina:')
         print(' id:', self.__id)
         print(' fecha:', self.fecha)
-        print(' sueldo:', self.__sueldo)
-        print(' comision:', self.comision)
-        print(' iess:', self.iess)
-        print(' antiguedad:', self.antiguedad)
-        print(' total_ingreso:', self.__total_ingreso)
-        print(' total_descuento:', self.__total_descuento)
-        print(' liquido_recibir:', self.__liquido_recibir)
         print(' Prestamo():', self.prestamo)
         print(' Empleado():', self.empleado)
         print(' Sobretiempo():', self.sobretiempo)
-        print(' Calculo Sobretiempo:', self.calcular_sobretiempo)
-        print(' Cuota Prestamo:', self.cuotaPrestamo)
+        print(' sueldo:', self.__sueldo)
+        print(' antiguedad:', self.antiguedad)
+        print(' comision:', self.comision)
+        print(' iess:', self.iess)
+        print(' calcular_sobretiempo:', self.calcular_sobretiempo)
+        print(' cuota_prestamo:', self.cuota_prestamo)
+        print(' total_ingreso:', self.__total_ingreso)
+        print(' total_descuento:', self.__total_descuento)
+        print(' liquido_recibir:', self.__liquido_recibir)
